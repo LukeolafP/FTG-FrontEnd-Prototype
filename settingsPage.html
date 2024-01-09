@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Settings & Privacy</title>
+        <link rel="icon" href="images/FTG-Favicons/FTG-Favicon-64x.png.png" type="image/xicon"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+
+    <body>
+
+        <div class="siteContainer">
+
+<!-- ==========================================================================================
+======================== HEADER SECTION =======================================================
+=========================================================================================== -->
+
+<header class="header">
+    <div class="headerleft">
+        <a href="Index.html" class="logo">
+            <img src="images/FTG.png" alt="FTG Logo">
+        </a>
+
+        <form action="" class="searchbar">
+            <input type="text" placeholder="Enter a player ID / team name..." id="">
+        </form>
+    </div>
+
+    <nav class="navbar">
+        <!-- <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Gallery</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a> -->
+    </nav>
+
+    <a class="pfp">
+        <img src="images/Sonk PFP.png" alt="PFP Image" class="PFPImage" onclick="togglePFPsubMenu()">
+        <div class="PFPDropDownWrapper" id="PFPsubMenu">
+            
+                <img src="images/PFPDropDownArrow.png" alt="" class="PFPDropDownArrowIMG">
+                <div class="PFPDropDownContainer">
+                    <div class="PFPDropDownHeader">
+                        <div class="PFPDropDownHeaderPFPTitle">
+                            <img src="images/Sonk PFP.png" alt="" class="PFPDropDownHeaderPFPIMG">
+                            <div class="PFPDropDownHeaderTitle">
+                                <p class="name">Sonic</p>
+                                <p class="team">Imperium</p>
+                            </div>
+                        </div>
+                        <div class="PFPDropDownHeaderSwitchAccounts">
+                            <p>Switch</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="PFPDropDownPageList">
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownPrivateProfilePageIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Personal Page</p>
+                        </div>
+                        <!-- <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownPublicProfileIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Public Page</p>
+                        </div> -->
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/Team PFP.png" alt="" class="PFPDropDownListIcon">
+                            <p>Team Page</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="PFPDropDownPageList">
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownCogIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Settings & Privacy</p>
+                        </div>
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownHelpIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Help & Support</p>
+                        </div>
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownPrivateProfileIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Private Profile</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="PFPDropDownPageList">
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownAddAccountIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Add Account</p>
+                        </div>
+                        <div class="PFPDropDownPageListItem">
+                            <img src="images/PFPDropDownLogOutIconSmall.png" alt="" class="PFPDropDownListIcon">
+                            <p>Log Out</p>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </a>
+</header>
+            
+<!-- ==========================================================================================
+======================== BODY SECTION =======================================================
+=========================================================================================== -->
+        <div class="settingsAndPrivacyPageContainer">
+            <div class="settingsNav">
+                <h1>Settings & Privacy</h1>
+                <hr>
+                <h2>Preferences</h2>
+                <ul>
+                    <li class="settingsNavButton" onclick="openSetting(event, 'preferencesNotifications')"><p>Notifications</p></li>
+                    <li class="settingsNavButton" onclick="openSetting(event, 'preferencesLanguageAndRegion')"><p>Language and Region</p></li>
+                </ul>
+                <h2>Account Settings</h2>
+                <ul>
+                    <li><p>Private Account</p><span class="material-symbols-outlined">open_in_new</span></li>
+                    <li class="settingsNavButton" onclick="openSetting(event, 'accountSettingsTeamsAssociations')"><p>Teams Associations</p></li>
+                    <li class="settingsNavButton" onclick="openSetting(event, 'accountSettingsSubscriptionsAndPaymentInfo')"><p>Subscriptions & Payment Info</p></li>
+                    <li class="settingsNavButton" onclick="openSetting(event, 'accountSettingsIntegrations')"><p>Integrations</p></li>
+                </ul>
+                <h2>Community Standards and Legal Policies</h2>
+                <ul>
+                    <li onclick="window.open('termsAndConditions.html')"><p>Terms of Service</p><span class="material-symbols-outlined">open_in_new</span></li>
+                    <li onclick="window.open('privacyPolicy.html')"><p>Privacy Policy</p><span class="material-symbols-outlined">open_in_new</span></li>
+                </ul>
+            </div>
+            <div class="settingsMainWrapper">
+                <div id="preferencesNotifications" class="settingsMainContainer">
+                    <p>Notifications</p>
+                </div>
+                <div id="preferencesLanguageAndRegion" class="settingsMainContainer">
+                    <p>LanguagesAndRegion</p>
+                </div>
+                <div id="accountSettingsTeamsAssociations" class="settingsMainContainer">
+                    <p>TeamsAssociations</p>
+                </div>
+                <div id="accountSettingsSubscriptionsAndPaymentInfo" class="settingsMainContainer">
+                    <p>SubscriptionPaymentInfo</p>
+                </div>
+                <div id="accountSettingsIntegrations" class="settingsMainContainer">
+                    <p>Integrations</p>
+                </div>
+            </div>
+        </div>
+
+
+<!-- ==========================================================================================
+======================== FOOTER SECTION =======================================================
+=========================================================================================== -->
+
+            <footer>
+                <div class="footer">
+                    <div class="footerVertNav">
+                        <a href="#" class="logo">
+                            <img src="images/FTG.png" alt="FTG Logo">
+                        </a>
+                        <nav class="footerNavbar">
+                            <a href="PlayerPage.html" class="footerNavLink">Personal Page</a>
+                            <a href="teamPage.html" class="footerNavLink">Team Page</a>
+                            <a href="settingsPage.html" class="footerNavLink">Settings</a>
+                            <a href="accountsPage.html" class="footerNavLink">Accounts</a>
+                            <a href="contactPage.html" class="footerNavLink">Contact</a>
+                        </nav>
+                    </div>
+
+                    <div class="footerHorizNav">
+                        <p class="footerInfo">Copyright © 2023 ForTheUsers Inc. All rights reserved. 
+                        </p>
+                        <nav>
+                            <a href="privateProfileConfirmationPage.html" target="_blank" class="footerHorizNavLink">Private Profile</a>
+                            <a href="termsAndConditions.html" target="_blank" class="footerHorizNavLink">Terms & Conditions</a>
+                            <a href="privacyPolicy.html" target="_blank" class="footerHorizNavLink">Privacy Policy</a>
+                            <!-- <a href="#" class="footerHorizNavLink">Cookie Settings</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+        </div>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="heatmap.js-master/build/heatmap.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1641,15 +1641,16 @@ main {
 }
 
 .profilebanner {
-    width: 100%;
     max-width: 1440px;
-    height: 371px;
+    width: 100%;
+    max-height: 371px;
+    height: auto;
     background: red;
 }
 
 .profilebanner img {
-    width: 100%;
     max-width: 1440px;
+    width: 100%;
     height: 371px;
     object-fit: cover;
 }
@@ -1690,7 +1691,73 @@ main {
     
 }
 
+@media (max-width:848px) {
+    .profilebanner {
+        max-width: 1440px;
+        width: 100%;
+        min-height: 35vw;
+        height: 50vw;
+        background: red;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .profilebanner img {
+        max-width: 1440px;
+        /* min-width: 100vw; */
+        width: 400vw;
+        height: 371px;
+        object-fit: cover;
+    }
 
+
+
+
+    .profilephoto {
+        top: 20vw;
+    }
+}
+
+@media (max-width:617px) {
+    .profilephoto {
+        display: flex;
+        flex-direction: row;
+        top: 35vw;
+    }
+    
+    .profilephoto img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .playerTeamBannerName {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-left: 10px;
+    }
+    
+    .profilephoto h2 {
+        color: #FFF;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+    
+    .profilephoto h3 {
+        color: #EBEBEB;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 23px;
+        font-style: italic;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
 
 /* ================== HOT BAR DROP DOWN ================= */
   
@@ -1800,6 +1867,30 @@ main {
     opacity: 1;
   }
 
+
+  @media (max-width:562px) {
+
+    .dropdown {
+        min-width: 175px;
+        position: relative;
+      }
+      
+      .dropdown * {
+        box-sizing: border-box;
+        font-family: Helvetica, sans-serif;
+        font-weight: 600;
+      }
+
+    .select {
+        width: 150px;
+        height: 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+      }
+  }
+
 /* =============================================
 ============== Main STAT SECTION ===========
 ============================================= */
@@ -1823,22 +1914,24 @@ main {
     flex-direction: row;
     justify-content: center;
     position: relative;
+    padding-left: 30px;
 }
 
 .personalSectionMainColumn {
     max-width: 774px;
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 21px;
     padding-left: 12px;
+    padding-right: 12px;
 }
 
 @media (max-width: 1110px) {
     .personalSection {
-        
+        padding-left: 0px;
     }
 }
 
@@ -2064,11 +2157,9 @@ main {
         height: auto;
         max-width: 774px;
         width: 100%;
-        margin-right: 12px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 12px;
     }
 
     .gamesSections {
@@ -2117,7 +2208,7 @@ main {
 
     .teamGame {
         max-width: 735px;
-        width: 100%;
+        width: auto;
         height: 57px;
         border-radius: 10px;
         background: #333;
@@ -2173,15 +2264,21 @@ main {
 
     @media (max-width: 848px) {
         .game {
+            width: auto;
             height: auto;
             justify-content: center;
-            padding-left: 0;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .teamGame {
+            width: auto;
             height: auto;
             justify-content: center;
-            padding-left: 0;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .teamGamePFP img {
@@ -2204,7 +2301,31 @@ main {
         }
 
         .gameLeftContainer {
-            gap: 30px;
+            gap: 5vw;
+        }
+    }
+
+    @media (max-width: 564px) {
+        .gameLeftContainer {
+            gap: 2vw;
+        }
+
+        .wonMatchGradientAgentScore {
+            width: 155px;
+            height: 57px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 28.91%, rgba(74, 225, 107, 0.76) 100%);
+            margin-left: -155px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+    
+        .matchAgentPhoto img {
+            height: 39px;
+            width: 39px;
+            user-select: none;
+            -webkit-user-drag: none;
         }
     }
 
@@ -2389,7 +2510,8 @@ main {
     @media (max-width:848px) {
         .matchStats {
             width: auto;
-            gap: 50px;
+            gap: 5vw;
+            margin-left: 0;
         }
 
         .matchStatWrapperLarge {
@@ -2398,6 +2520,8 @@ main {
 
         .matchStatWrapperLargeMobile {
             display: flex;
+            width: auto;
+            height: auto;
         }
 
         .matchStatWrapperMedium {
@@ -2411,6 +2535,50 @@ main {
 
         .matchStat {
             font-size: 24px;
+        }
+    }
+    
+
+    @media (max-width: 562px) {
+        .matchStats {
+            width: auto;
+            gap: 5vw;
+        }
+
+        .matchStatWrapperMedium {
+
+        }
+
+        .matchStatName {
+            font-size: 12px;
+        }
+
+        .matchStat {
+            font-size: 18px;
+        }
+
+
+        .matchAgentPhoto {
+
+        }
+
+        .matchAgentPhoto img {
+            
+        }
+
+        .wonMatchGradientAgentScore {
+            width: 125px;
+            height: 57px;
+        }
+
+        .matchMapPhoto img {
+            width: 125px;
+            height: 57px;
+        }
+
+        .wonMatchGradientAgentScore h2 {
+            font-size: 24px;
+            font-weight: 900;
         }
     }
 
@@ -2486,6 +2654,8 @@ main {
 }
 
 .personalStatSideColumnBlock {
+    display: flex;
+    flex-direction: column;
     width: 320px;
     height: 1858px;
     border-radius: 12px;
@@ -2523,7 +2693,7 @@ main {
 }
 
 .showPersonalStatSideColumnBlock {
-    visibility: visible;
+    display: flex;
 }
 
 .hidePersonalStatSideColumnBlockMinimized {

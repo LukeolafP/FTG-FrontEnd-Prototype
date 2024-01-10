@@ -74,6 +74,18 @@ function teamSectionMobileExpandToggleFunction() {
 }
 
 
+/*===============================================================================================
+======================== Personal Side Section Mobile Toggle Overlay ============================
+===============================================================================================*/
+
+let personalStatSideColumnBlock = document.getElementById("personalStatSideColumnBlockID");
+let personalStatSideColumnBlockMinimized = document.getElementById("personalStatSideColumnBlockMinimizedID");
+
+function personalStatSideColumnBlockToggleFunction() {
+  personalStatSideColumnBlock.classList.toggle("showPersonalStatSideColumnBlock")
+  personalStatSideColumnBlockMinimized.classList.toggle("hidePersonalStatSideColumnBlockMinimized")
+}
+
 
 
 

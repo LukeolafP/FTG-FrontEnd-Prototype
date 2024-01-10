@@ -1817,8 +1817,8 @@ main {
 
 .personalSection {
     max-width: 1110px;
-    width: 100%;
-    height: 2278px;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -2061,7 +2061,6 @@ main {
 /* ----- Matches Section ----- */
 
     .games {
-        max-height: 2000px;
         height: auto;
         max-width: 774px;
         width: 100%;
@@ -2131,12 +2130,23 @@ main {
         padding-right: 25px;
         pointer-events: all;
     }
+    
 
     .matchMapPhoto {
         width: 155px;
         height: 57px;
         user-select: none;
         -webkit-user-drag: none;
+    }
+
+    .gameGridWrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .gameLeftContainer {
+        display: flex;
+        align-items: center;
     }
 
     .matchScore {
@@ -2161,72 +2171,105 @@ main {
         -webkit-user-drag: none;
     }
 
-    @media (max-width: 774px) {
+    @media (max-width: 848px) {
+        .game {
+            height: auto;
+            justify-content: center;
+            padding-left: 0;
+        }
 
+        .teamGame {
+            height: auto;
+            justify-content: center;
+            padding-left: 0;
+        }
+
+        .teamGamePFP img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            position: static;
+            margin-top: 0;
+            margin-left: 0;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .gameGridWrapper {
+            flex-direction: column;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            gap: 10px;
+        }
+
+        .gameLeftContainer {
+            gap: 30px;
+        }
     }
 
     /* ---------- Tysens Place Gradient Code ------------ */
 
-    .wonMatchGradientAgentScoreWon {
-        width: 155px;
-        height: 57px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 28.91%, rgba(74, 225, 107, 0.76) 100%);
-        margin-left: -155px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
+        .wonMatchGradientAgentScoreWon {
+            width: 155px;
+            height: 57px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 28.91%, rgba(74, 225, 107, 0.76) 100%);
+            margin-left: -155px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .wonMatchGradientAgentScoreLoss {
-        width: 155px;
-        height: 57px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 28.91%, rgba(223, 37, 37, 0.829) 100%);
-        margin-left: -155px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
+        .wonMatchGradientAgentScoreLoss {
+            width: 155px;
+            height: 57px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 28.91%, rgba(223, 37, 37, 0.829) 100%);
+            margin-left: -155px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
 
-.wonMatchGradientAgentScoreWon h2 {
-        color: #FFF;
-        text-align: center;
-        text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.50);
-        font-family: Helvetica Neue;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-    }
+        .wonMatchGradientAgentScoreWon h2 {
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.50);
+            font-family: Helvetica Neue;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+        }
 
-    .wonMatchGradientAgentScoreLoss h2 {
-        color: #FFF;
-        text-align: center;
-        text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.50);
-        font-family: Helvetica Neue;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-    }
-    
-    .matchPlaceMVP {
-        width: 30px;
-        height: 12px;
-        background: #E1BC25; 
-        border-radius: 5px;
-    }
+        .wonMatchGradientAgentScoreLoss h2 {
+            color: #FFF;
+            text-align: center;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.50);
+            font-family: Helvetica Neue;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+        }
+        
+        .matchPlaceMVP {
+            width: 30px;
+            height: 12px;
+            background: #E1BC25; 
+            border-radius: 5px;
+        }
 
-    .matchPlaceMVP p {
-        color: #3C3C3C;
-        text-align: center;
-        font-family: Helvetica Neue;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
+        .matchPlaceMVP p {
+            color: #3C3C3C;
+            text-align: center;
+            font-family: Helvetica Neue;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
 
     /* ---------------------------------- */
 
@@ -2308,6 +2351,15 @@ main {
         text-align: right;
     }
 
+    .matchStatWrapperLargeMobile {
+        height: 34px;
+        width: 70px;
+        display: none;
+        flex-direction: column;
+        text-align: right;
+        justify-content: center;
+    }
+
     .matchStatWrapperMedium {
         height: 34px;
         width: 40px;
@@ -2334,7 +2386,33 @@ main {
         line-height: normal;
     }
 
+    @media (max-width:848px) {
+        .matchStats {
+            width: auto;
+            gap: 50px;
+        }
 
+        .matchStatWrapperLarge {
+            display: none;
+        }
+
+        .matchStatWrapperLargeMobile {
+            display: flex;
+        }
+
+        .matchStatWrapperMedium {
+            height: auto;
+            width: auto;
+        }
+
+        .matchStatName {
+            font-size: 18px;
+        }
+
+        .matchStat {
+            font-size: 24px;
+        }
+    }
 
     /* ----- End of page nav ----- */
 
@@ -2427,11 +2505,10 @@ main {
 
 @media (max-width: 1110px) {
     .personalStatSideColumnBlock {
-        visibility: hidden;
+        display: none;
         z-index: 50;
         position: absolute;
-        /* right: 0;
-        margin-right: -320px; */
+        margin-right: -500px;
     }
 
     .personalStatSideColumnBlockMinimized {
@@ -2444,6 +2521,15 @@ main {
         margin-top: 21px;
     }
 }
+
+.showPersonalStatSideColumnBlock {
+    visibility: visible;
+}
+
+.hidePersonalStatSideColumnBlockMinimized {
+    visibility: hidden;
+}
+
 
 /* ======== SIDE COLUMN HEADER ======= */
 

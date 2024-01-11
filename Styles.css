@@ -1790,7 +1790,7 @@ main {
   .select-clicked {
     border: 2px #494949 solid;
   }
-  
+
   .select:hover {
     background: #242424;
   }
@@ -1821,7 +1821,7 @@ main {
     top: 3em;
     left: 50%;
     width: 100%;
-    height: 15em;
+    height: 15em;      
     transform: translateX(-50%);
     opacity: 0;
     display: none;
@@ -1871,23 +1871,26 @@ main {
   @media (max-width:562px) {
 
     .dropdown {
-        min-width: 175px;
-        position: relative;
+        min-width: 125px;
       }
       
       .dropdown * {
         box-sizing: border-box;
-        font-family: Helvetica, sans-serif;
         font-weight: 600;
       }
 
     .select {
-        width: 150px;
+        width: 125px;
         height: 35px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1em;
+        font-size: 12px;
+      }
+
+      .menu li {
+        font-size: 15px;
       }
   }
 
@@ -2678,7 +2681,7 @@ main {
         display: none;
         z-index: 50;
         position: absolute;
-        margin-right: -500px;
+        margin-right: -56vb;
     }
 
     .personalStatSideColumnBlockMinimized {
@@ -2700,6 +2703,24 @@ main {
     visibility: hidden;
 }
 
+
+@media (max-width: 848px) {
+    .personalStatSideColumnBlock {
+        margin-right: -30vb;
+    }
+}
+
+@media (max-width: 744px) {
+    .personalStatSideColumnBlock {
+        margin-right: -30vw;
+    }
+}
+
+@media (max-width: 562px) {
+    .personalStatSideColumnBlock {
+        margin-right: -20vw;
+    }
+}
 
 /* ======== SIDE COLUMN HEADER ======= */
 

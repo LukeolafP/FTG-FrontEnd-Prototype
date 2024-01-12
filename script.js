@@ -49,6 +49,16 @@ function toggleSearchOverlay() {
 
 
 /*===============================================================================================
+======================== HomePage Prototype Agreement ==========================================
+===============================================================================================*/
+
+let homePagePrototypeAgreementPageWrapper = document.getElementById("homePagePrototypeAgreementPageWrapperID");
+
+function toggleHomePagePrototypeAgreementPageWrapper() {
+  homePagePrototypeAgreementPageWrapper.classList.toggle("closeHomePagePrototypeAgreementPageWrapper");
+}
+
+/*===============================================================================================
 ======================== Contact Us Submit Prototyping ==========================================
 ===============================================================================================*/
 

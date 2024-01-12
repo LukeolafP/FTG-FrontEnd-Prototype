@@ -131,8 +131,34 @@ body::-webkit-scrollbar-thumb:hover {
     padding-top: 30px;
 }
 
+.errorPageHomeButton {
+    background-color: #E14747;
+    width: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    pointer-events: all;
+    user-select: none;
+    cursor: pointer;
+}
 
-
+.errorPageReturnHomeRowContainer {
+    display: flex;
+    flex-direction:row;
+    gap:15px;
+    align-items: center;
+    text-align: end;
+    margin-top: 20px;
+}
 
 /* =============================================
 ============== HEADER SECTION ==================
@@ -511,6 +537,87 @@ header .pfp .PFPImage:hover {
     }
 }
 
+/* =============================================
+========= HomePage Prototype Agreement =========
+============================================= */
+
+.homePagePrototypeAgreementPageWrapper {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.062);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.closeHomePagePrototypeAgreementPageWrapper {
+    display: none;
+}
+
+.homePagePrototypeAgreementContainer {
+        max-width: 400px;
+        width: 100%;
+        max-height: 1200px;
+        height: auto;
+        background: #1d1d1d;
+        border-radius: 8px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        padding-left: 8px;
+        padding-right: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+}
+
+.homePagePrototypeAgreementContainer hr {
+    width: 90%;
+    margin: 15px;
+}
+
+.homePagePrototypeAgreementContainer h1 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    padding: 15px;
+}
+
+.homePagePrototypeAgreementContainer p {
+    color: rgb(201, 201, 201);
+    font-family: Helvetica, sans-serif;
+    padding: 15px;
+}
+
+.homePagePrototypeAgreementContainer h3 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    padding: 15px;
+}
+
+.agreementButtonYes {
+    background-color: #E14747;
+    width: 145px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    pointer-events: all;
+}
 
 /* =============================================
 ============== HomePage Body SECTION ===========
@@ -824,6 +931,8 @@ header .pfp .PFPImage:hover {
     font-weight: bold;
     font-size: 20px;
     pointer-events: all;
+    user-select: none;
+    cursor: pointer;
 }
 
 .showSignInButton {
@@ -1645,7 +1754,6 @@ main {
     width: 100%;
     max-height: 371px;
     height: auto;
-    background: red;
 }
 
 .profilebanner img {
@@ -1653,6 +1761,17 @@ main {
     width: 100%;
     height: 371px;
     object-fit: cover;
+}
+
+.profileBannerMobileGradientOverlay {
+    visibility: hidden;
+    position: absolute;
+    max-width: 1440px;
+    width: 100%;
+    max-height: 371px;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.726));
+    margin-top: -371px;
 }
 
 .profilephoto {
@@ -1721,6 +1840,10 @@ main {
 }
 
 @media (max-width:617px) {
+    .profileBannerMobileGradientOverlay {
+        visibility: visible;
+    }
+
     .profilephoto {
         display: flex;
         flex-direction: row;

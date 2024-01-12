@@ -1657,6 +1657,14 @@ Highcharts.chart('wlHistoryGraphID', {
     margin: 0,
   },
 
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 50
+      }
+    }]
+  },
+
   title: false,
   subtitle: false,
   credits: {

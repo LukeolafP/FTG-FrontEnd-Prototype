@@ -185,17 +185,17 @@
 
                     
                         <!-- ==========================================================================================
-                        ======================== Team STAT SECTION ====================================================
+                        ======================== Left/Team STAT SECTION ====================================================
                         =========================================================================================== -->
 
                         <div class="teamSection" id="teamSectionID">
                             <div class="teamHotBarSection">
-                                <nav>
-                                    <a class="teamHotBarSectionNav1" href="#">Team</a>
-                                    <a class="teamHotBarSectionNav2" href="#">Peak</a>
-                                    <a class="teamHotBarSectionNav3" href="#">Friends</a>
-                                    <a class="teamHotBarSectionNav4" href="#">AVG SG</a>
-                                </nav>
+                                <ul class="teamHotBarNavSection">
+                                    <div class="teamHotBarNavTab activeLeftTeamHotBarTab" onclick="openLeftTeamTabFunction(event, 'TeamID')">Team</div>
+                                    <div class="teamHotBarNavTab" onclick="openLeftTeamTabFunction(event, 'PeakID')">Peak</div>
+                                    <div class="teamHotBarNavTab" onclick="openLeftTeamTabFunction(event, 'FriendsID')">Friends</div>
+                                    <div class="teamHotBarNavTab" onclick="openLeftTeamTabFunction(event, 'AVGSkillGroupID')">AVG SG</div>
+                                </ul>
                                 <div class="teamHotBarSectionMobileOverlayToggleButtonContainer">
                                     <div class="teamSectionMobileExpandButtonWrapper" id="teamSectionMobileExpandButtonID">
                                         <span class="material-symbols-outlined" onclick="teamSectionMobileExpandToggleFunction()">expand_more</span>
@@ -203,7 +203,7 @@
                                 </div>
                             </div>
                             <div class="teamStatSection">
-                                <div class="teamStatSectionContainer" id="teamStatSectionContainer">
+                                <div class="teamStatSectionContainer" id="TeamID">
 
                                     <div class="teamTitleCard">
                                         <div class="teamProfilePictureWrapper">
@@ -775,8 +775,22 @@
                                     </div>
 
                                 </div>
+
+                                <div class="teamStatSectionContainer" id="PeakID" style="display: none;">
+                                    Peak Stat section
+                                </div>
+
+                                <div class="teamStatSectionContainer" id="FriendsID" style="display: none;">
+                                    Friends Stat Section
+                                </div>
+
+                                <div class="teamStatSectionContainer" id="AVGSkillGroupID" style="display: none;">
+                                    AVG SG
+                                </div>
                             </div>
                         </div>
+
+                        
 
                         <!-- ==========================================================================================
                         ======================== PERSONAL STAT SECTION ================================================
@@ -968,7 +982,7 @@
                                 <div class="games">
                                     <div class="gamesSections" #gs1>
                                         <div class="gamesSectionDate"><p>Oct 20, 2023</p></div>
-                                        <div class="teamGame" href="">
+                                        <div class="teamGame" href="" onclick="overlayPopupWindowTeamMatch1Function()">
                                             <div class="gameGridWrapper">
                                                 <div class="gameLeftContainer">
                                                     <div class="teamGamePFP"><img src="images/Team PFP.png" alt=""></div>
@@ -1020,7 +1034,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="teamGame" href="">
+                                        <div class="teamGame" href="" onclick="overlayPopupWindowTeamMatch2Function()">
                                             <div class="gameGridWrapper">
                                                 <div class="gameLeftContainer">
                                                     <div class="teamGamePFP"><img src="images/Team PFP.png" alt=""></div>
@@ -1072,7 +1086,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="game" href="">
+                                        <div class="game" href="" onclick="overlayPopupWindowMatch1Function()">
                                             <div class="gameGridWrapper">
                                                 <div class="gameLeftContainer">
                                                     <div class="matchScore">
@@ -2083,19 +2097,108 @@
                             </div>
 
                             <!-- ==========================================================================================
+                            ======================== SIDE COLUMN SECTION Popup Overlays ===================================
+                            =========================================================================================== -->
+                                
+                            <div class="overlayPopupWindowPageWrapper">
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowHeadshotID">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Headshot%:</h1>
+                                            <p>Last 20 Games</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="personalPageOverlayPopupHeadshotFunction()">close</span>
+                                    </div>
+                                </div>
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowMapWRID">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Map Winrate:</h1>
+                                            <p>Last 20 Games</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="personalPageOverlayPopupMapWRFunction()">close</span>
+                                    </div>
+                                </div>
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowAgentWRID">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Agent Winrate:</h1>
+                                            <p>Last 20 Games</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="personalPageOverlayPopupAgentWRFunction()">close</span>
+                                    </div>
+                                </div>
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowAgentDuelWRID">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Agent Duel Winrate:</h1>
+                                            <p>Last 20 Games</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="personalPageOverlayPopupAgentDuelWRFunction()">close</span>
+                                    </div>
+                                </div>
+
+                                <!-- ==========================================================================================
+                                ================================= Match Popup Overlay =========================================
+                                =========================================================================================== -->
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowTeamMatchID1">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Team Match #1:</h1>
+                                            <p>Competitive</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="overlayPopupWindowTeamMatch1Function()">close</span>
+                                    </div>
+                                </div>
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowTeamMatchID2">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Team Match #2:</h1>
+                                            <p>Competitive</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="overlayPopupWindowTeamMatch2Function()">close</span>
+                                    </div>
+                                </div>
+
+                                <div class="overlayPopupWindowContainer" id="overlayPopupWindowMatchID1">
+                                    <div class="overlayPopupWindowHeader">
+                                        <div class="overlayPopupWindowHeaderLeft">
+                                            <h1>Match #1:</h1>
+                                            <p>Competitive</p>
+                                        </div>
+                                        <span class="material-symbols-outlined" onclick="overlayPopupWindowMatch1Function()">close</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+
+                            
+
+                            <!-- ==========================================================================================
                             ======================== SIDE COLUMN SECTION ==================================================
                             =========================================================================================== -->
 
                             <div class="personalStatSideColumnBlock" id="personalStatSideColumnBlockID">
+
                                     <div class="sideColumnHeader">
                                         <div class="sideColumnHeaderCurvedCorner">
-                                            <span class="material-symbols-outlined" style="rotate:-90deg;font-size:30px;" onclick="personalStatSideColumnBlockToggleFunction()">expand_more</span>
+                                            <span class="material-symbols-outlined" style="rotate:-90deg;font-size:30px;" onclick="personalStatSideColumnBlockToggleFunction()" id="personalStatSideColumnExpandIconID">expand_more</span>
                                         </div>
                                     </div>
-                                        <!-- ===== SIDE COLUMN HEADSHOT ===== -->
+
+                                    <!-- ===== SIDE COLUMN HEADSHOT ===== -->
+                                    
                                     <div class="sideColumnHeadshotContainer">
+
                                         <div class="sideColumnSectionHeader">
-                                            <div class="expandIcon">
+                                            <div class="expandIcon" id="overlayHeadshotExpandButtonID" onclick="personalPageOverlayPopupHeadshotFunction()">
                                                 <img src="images/Expand Icon White.png" alt="">
                                             </div>
                                             <p class="sideColumnTitle">
@@ -2103,6 +2206,7 @@
                                             </p>
                                             <div class="sideColumnHeaderGhostBox"> </div>
                                         </div>
+
                                         <div class="sideColumnHeadshotMainStatContainer">
                                             <img src="images/Headshot Meeple.png" alt="">
                                             <div class="sideColumnHeadshotMainStatsColumn">
@@ -2123,12 +2227,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         <div class="teamStatSectionStatSectionBarGraph" id="sideColumnHeadshotBarGraphID"></div>
                                     </div>
                                         <!-- ===== SIDE COLUMN MAP WINRATE ===== -->
                                     <div class="sideColumnMapWR">
-                                        <div class="sideColumnSectionHeader">
-                                            <div class="expandIcon">
+                                        <div class="sideColumnSectionHeader" id="sideColumnSectionHeaderLocationID">
+                                            <div class="expandIcon" onclick="personalPageOverlayPopupMapWRFunction()">
                                                 <img src="images/Expand Icon White.png" alt="">
                                             </div>
                                             <p class="sideColumnTitle">
@@ -3072,7 +3177,7 @@
                                         <!-- ===== SIDE COLUMN AGENT WINRATE ===== -->
                                     <div class="sideColumnAgentWR">
                                         <div class="sideColumnSectionHeader">
-                                            <div class="expandIcon">
+                                            <div class="expandIcon" onclick="personalPageOverlayPopupAgentWRFunction()">
                                                 <img src="images/Expand Icon White.png" alt="">
                                             </div>
                                             <p class="sideColumnTitle">
@@ -6672,11 +6777,11 @@
                                         <!-- ===== SIDE COLUMN AGENT DUEL ===== -->
                                     <div class="sideColumnAgentDuel">
                                         <div class="sideColumnSectionHeader">
-                                            <div class="expandIcon">
+                                            <div class="expandIcon" onclick="personalPageOverlayPopupAgentDuelWRFunction()">
                                                 <img src="images/Expand Icon White.png" alt="">
                                             </div>
                                             <p class="sideColumnTitle">
-                                                Agent Winrate
+                                                Agent Duel Winrate
                                             </p>
                                             <div class="sideColumnHeaderGhostBox"> </div>
                                         </div>

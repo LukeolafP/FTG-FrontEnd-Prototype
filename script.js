@@ -1,3 +1,4 @@
+
 /*===============================================================================================
 ======================== Register RSO Protoyping ================================================
 ===============================================================================================*/
@@ -83,6 +84,108 @@ function teamSectionMobileExpandToggleFunction() {
   teamSection.classList.toggle("teamSectionExpand")
 }
 
+/*===============================================================================================
+========================== SIDE SECTION OVERLAY POPUP WINDOWS ===================================
+===============================================================================================*/
+let sideColumnHeadshotOverlay = document.getElementById("overlayPopupWindowHeadshotID");
+
+let sideColumnMapWROverlay = document.getElementById("overlayPopupWindowMapWRID");
+
+let sideColumnAgentWROverlay = document.getElementById("overlayPopupWindowAgentWRID");
+
+let sideColumnAgentDuelWROverlay = document.getElementById("overlayPopupWindowAgentDuelWRID");
+
+
+
+function personalPageOverlayPopupMatchFunction() {
+  sideColumnMatchOverlay.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function personalPageOverlayPopupTeamMatchFunction() {
+  sideColumnTeamMatchOverlay.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function personalPageOverlayPopupHeadshotFunction() {
+  sideColumnHeadshotOverlay.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function personalPageOverlayPopupMapWRFunction() {
+  sideColumnMapWROverlay.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function personalPageOverlayPopupAgentWRFunction() {
+  sideColumnAgentWROverlay.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function personalPageOverlayPopupAgentDuelWRFunction() {
+  sideColumnAgentDuelWROverlay.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+//NOT FUNCTION BUT PRETTY CLOSE USING toggle(Selector) as opposed to an if, else with add(selector) remove(selector)
+
+// let sideColumnSectionHeaderLocation = document.getElementById("sideColumnSectionHeaderLocationID");
+
+// sideColumnSectionHeaderLocation.addEventListener("click", function(j){
+//         let togglePopup = j.target.closest(".expandIcon");
+//           if (togglePopup && this.contains(togglePopup)) {
+//             togglePopup.classList.toggle("showOverlayPopupWindowPageWrapper");
+//           }
+//           console.log("Expand Clicked")
+// });
+
+// sideColumnSectionHeaderLocation.addEventListener("click", function(k){
+//   let closeOverlayIcon = k.target.closest(".material-symbols-outlined");
+//   console.log("X Clicked")
+//   let overlay = k.target.closest(".overlayPopupWindowPageWrapper")
+//       if (closeOverlayIcon && this.contains(closeOverlayIcon)) {
+//         console.log("if statement triggered")
+//         overlay.classList.toggle("showOverlayPopupWindowPageWrapper");
+//       }
+// });
+
+
+
+
+//Tried to put it all in one function because they shared a commone event listener and thought that might be the issue.
+
+// let sideColumnSectionHeaderLocation = document.getElementById("sideColumnSectionHeaderLocationID");
+
+// sideColumnSectionHeaderLocation.addEventListener("click", function(j){
+//         let togglePopup = j.target.closest(".expandIcon");
+//           if (togglePopup && this.contains(togglePopup)) {
+//             togglePopup.classList.toggle("showOverlayPopupWindowPageWrapper");
+//           }
+
+
+//         let closeOverlayIcon = j.target.closest(".material-symbols-outlined");
+//         let overlay = j.target.closest(".overlayPopupWindowPageWrapper")
+//           if (closeOverlayIcon && this.contains(togglePopup)) {
+//             overlay.classList.toggle("showOverlayPopupWindowPageWrapper");
+//           }
+// });
+
+/*===============================================================================================
+========================== SIDE SECTION OVERLAY POPUP WINDOWS ===================================
+===============================================================================================*/
+let overlayPopupWindowTeamMatch1 = document.getElementById("overlayPopupWindowTeamMatchID1");
+
+let overlayPopupWindowTeamMatch2 = document.getElementById("overlayPopupWindowTeamMatchID2");
+
+let overlayPopupWindowMatch1 = document.getElementById("overlayPopupWindowMatchID1");
+
+
+
+function overlayPopupWindowTeamMatch1Function() {
+  overlayPopupWindowTeamMatch1.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function overlayPopupWindowTeamMatch2Function() {
+  overlayPopupWindowTeamMatch2.classList.toggle("showOverlayPopupWindowContainer")
+}
+
+function overlayPopupWindowMatch1Function() {
+  overlayPopupWindowMatch1.classList.toggle("showOverlayPopupWindowContainer")
+}
 
 /*===============================================================================================
 ======================== Personal Side Section Mobile Toggle Overlay ============================
@@ -265,6 +368,31 @@ let containerSideColumnAgentDuelWR2 = document.getElementById("containerSideColu
     });
 
 /*===============================================================================================
+======================== Left/Team Section Tabs =================================================
+===============================================================================================*/
+
+function openLeftTeamTabFunction(evt, tabName) {
+  // Declare all variables
+  var i, teamStatSectionContainer, teamHotBarNavTab;
+
+  // Get all elements with class="teamStatSectionContainer" and hide them
+  teamStatSectionContainer = document.getElementsByClassName("teamStatSectionContainer");
+  for (i = 0; i < teamStatSectionContainer.length; i++) {
+    teamStatSectionContainer[i].style.display = "none";
+  }
+
+  // Get all elements with class="teamHotBarNavTab" and remove the class "active"
+  teamHotBarNavTab = document.getElementsByClassName("teamHotBarNavTab");
+  for (i = 0; i < teamHotBarNavTab.length; i++) {
+    teamHotBarNavTab[i].className = teamHotBarNavTab[i].className.replace(" activeLeftTeamHotBarTab", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "flex";
+  evt.currentTarget.className += " activeLeftTeamHotBarTab";
+}
+
+/*===============================================================================================
 ======================== HotbarDrop Down ========================================================
 ===============================================================================================*/
 
@@ -305,7 +433,7 @@ dropdowns.forEach(dropdown => {
 ======================== Team Stat Section ======================================================
 ===============================================================================================*/
 
-let teamStatSectionLocationDropDown1 = document.getElementById("teamStatSectionContainer");
+let teamStatSectionLocationDropDown1 = document.getElementById("TeamID");
 
 teamStatSectionLocationDropDown1.addEventListener("click", function(c){
         let toggleDiv = c.target.closest(".teamStatSectionStatSectionDropDownContainer1");
@@ -319,7 +447,7 @@ teamStatSectionLocationDropDown1.addEventListener("click", function(c){
         console.log(toggleArrowParsed)
 });
 
-let teamStatSectionLocationDropDown2 = document.getElementById("teamStatSectionContainer");
+let teamStatSectionLocationDropDown2 = document.getElementById("TeamID");
 
 teamStatSectionLocationDropDown2.addEventListener("click", function(c){
         let toggleDiv = c.target.closest(".teamStatSectionStatSectionDropDownContainer2");
